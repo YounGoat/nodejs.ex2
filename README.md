@@ -64,7 +64,22 @@ app.use('/users', users);
 
 If one more router added to ```./routes```, no more statement needed to modify ```app``` as what has to be done without ex2.
 
-```options``` included:
+A javascript file in ```./routes``` directory may export a normal Express.Router instance as usual. It can also be in more simple form, e.g.
+```javascript
+// Not necessary to be initialized by express.Router().
+module.exports = {
+	// Use "METHOD: FUNCTION" instead of execute the METHOD('/', FUNCTION) function.
+	get: function(res, req, next) {
+		// ...
+	},
+
+	post: function(res, req, next) {
+		// ...
+	}
+};
+```
+
+Options used in ```ex2(app).route()``` may include:
 *	__index__  
 	default: "index"  
 	Javascript file with name "index" will be used as default router instead of router for ".../index".
