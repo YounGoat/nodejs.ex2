@@ -64,7 +64,7 @@ app.use('/users', users);
 
 If one more router added to ```./routes```, no more statement needed to modify ```app``` as what has to be done without ex2.
 
-A javascript file in ```./routes``` directory may export a normal Express.Router instance as usual. It can also be in more simple form, e.g.
+A javascript file in ```./routes``` directory may export a normal __Express.Router__ instance as usual. It can also be in more simple form, e.g.
 ```javascript
 // Not necessary to be initialized by express.Router().
 module.exports = {
