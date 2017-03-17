@@ -60,7 +60,7 @@ ExpressUtil.prototypeof = function(instance, protoname) {
 };
 
 // Create an express Router instance.
-ExpressUtil.parseRouter = function(router) {
+ExpressUtil.parseRouter = function(router, subpath) {
 	var expressRouter;
 
 	if (ExpressUtil.prototypeof(router, 'router')) {
@@ -68,16 +68,19 @@ ExpressUtil.parseRouter = function(router) {
 	}
 	else {
 		expressRouter = express.Router();
+		if (!subpath) {
+			subpath = '/';
+		}
 
 		METHODS.forEach(function(method) {
 			if (router[method]) {
-				expressRouter[method]('/', router[method]);
+				expressRouter[method](subpath, router[method]);
 			}
 		});
 
 		// If no method matching the request, try the default.
 		if (typeof router == 'function') {
-			expressRouter.all('/', router);
+			expressRouter.all(subpath, router);
 		}
 	}
 	return expressRouter;
