@@ -2,6 +2,8 @@ See [CHANGE LOG](./CHANGELOG.md) for notable changes.
 
 #	EX2, Yuan-Express-Expand, another practice on Express
 
+[![NPM](https://nodei.co/npm/ex2.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ex2)
+
 Genenally, we create a new application based on __Express__ via *express-generator*. The output of express-generator is regarded as the best practice of Express. However, I need something more convenient. So, *yuan-express-expand* is created.
 
 ##	Start Up
